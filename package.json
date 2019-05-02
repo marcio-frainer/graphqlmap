@@ -1,0 +1,16 @@
+{
+  "name": "graphql_json",
+  "version": "1.0.0",
+  "description": "Package coonection mapping graphql light",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcio Frainer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1"
+  }
+}

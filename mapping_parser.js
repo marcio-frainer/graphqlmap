@@ -1,0 +1,10 @@
+/** 
+ * 
+ * 
+ * 
+*/
+
+exports.MappingParser = function(mappingJsonStruct) {
+
+}
+
