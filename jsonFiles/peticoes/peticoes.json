@@ -1,0 +1,10 @@
+{
+	"route": "/peticoes",
+	"mapping": [
+		{"fieldName": "cdpeticao",
+		"fieldType": "string",
+		"size": 14}
+	],
+	"schemma": [
+	]	
+}

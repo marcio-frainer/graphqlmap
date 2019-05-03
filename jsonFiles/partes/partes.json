@@ -1,0 +1,10 @@
+{
+	"route": "/partes",
+	"mapping": [
+		{"fieldName": "cdpessoa_muito",
+		"fieldType": "string",
+		"size": 14}
+	],
+	"schemma": [
+	]	
+}

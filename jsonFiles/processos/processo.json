@@ -1,0 +1,10 @@
+{
+	"route": "/processos",
+	"mapping": [
+		{"fieldName": "nuprocesso",
+		"fieldType": "string",
+		"size": 14}
+	],
+	"schemma": [
+	]	
+}

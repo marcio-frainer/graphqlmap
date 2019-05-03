@@ -4,13 +4,26 @@
   "description": "Package coonection mapping graphql light",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js ./jsonFiles",
+    "build": "babel src -d dist --source-maps",
+    "serve": "node index.js"
   },
   "author": "Marcio Frainer",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
-    "graphql": "^14.2.1"
+    "graphql": "^14.2.1",
+    "graphql-tools": "^4.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.19.0"
   }
 }

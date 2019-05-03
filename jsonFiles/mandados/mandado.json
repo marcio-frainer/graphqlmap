@@ -1,0 +1,10 @@
+{
+	"route": "/mandados",
+	"mapping": [
+		{"fieldName": "numandado",
+		"fieldType": "string",
+		"size": 14}
+	],
+	"schemma": [
+	]	
+}
