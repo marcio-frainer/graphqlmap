@@ -1,7 +1,14 @@
-/** 
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 
+ * GraphQL server application
+ * Node.js
+ * Marcio Frainer - 14/05/2019
  * 
- * 
+ * Load structure file
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
 
 const fs = require('fs');
@@ -11,7 +18,6 @@ var graphql_parser = require('./graphql_parser');
 const load_server = require('./load_server');
 const app = load_server.LoadServer();
 const graphqlHTTP = load_server.LoadGraphqlHTTP();
-const config = require('./config');
 
 var extension = ".json";
 
@@ -20,15 +26,16 @@ function LoadStructureFile(jsonFile) {
   //   SetConsoleLog("The structure of file " + jsonFile + " is invalid!");
   //   return;
   // }
-  LoadFile(jsonFile);
+  var jsonFormat = LoadFileToJson(jsonFile);
+  var config = LoadFileToJson('./config.json');
+  graphql_parser.GraphParser(config, jsonFormat, app, graphqlHTTP);
 }
 
-function LoadFile(file) {
+exports.LoadFileToJson = function (file) {
   try {
     console.log("Loading: " + path.basename(file) + ".");
     var contents = fs.readFileSync(file);
-    var jsonContent = JSON.parse(contents);
-    graphql_parser.GraphParser(jsonContent, app, graphqlHTTP);
+    return JSON.parse(contents);
   } catch (e) {
     console.log(e);
   }

@@ -9,7 +9,7 @@ var graph = require('graphql-tools');
 var {GraphQLSchema, GraphQLObjectType, GraphQLString} = require('graphql');
 var service = require('@tadashi/placa');
 
-exports.GraphParser = function(jsonStruct, app, graphqlHTTP) {
+exports.GraphParser = function(config, jsonStruct, app, graphqlHTTP) {
     var route = jsonStruct.route;
     var table = jsonStruct.table;
     var mapping = jsonStruct.mapping[0];
