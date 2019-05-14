@@ -1,0 +1,6 @@
+{
+    "db_type": "MSSQL",
+    "server": "172.21.8.8",
+    "instance": "iSAJ01",
+    "alias": "PG5TINT2"
+}
