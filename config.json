@@ -1,6 +1,12 @@
 {
-    "db_type": "MSSQL",
-    "server": "172.21.8.8",
-    "instance": "iSAJ01",
-    "alias": "PG5TINT2"
+    "database": {
+        "type": "MSSQL",
+        "config": {
+            "username": "saj",
+            "password": "agesune1",
+            "host": "172.21.8.8//Isaj01",
+            "alias": "PG5TINT",
+            "parseJSON": true
+        }
+    }
 }

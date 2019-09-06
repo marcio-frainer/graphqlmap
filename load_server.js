@@ -1,17 +1,16 @@
-/** 
- * 
- * 
- * 
+/**
+ *
+ *
+ *
 */
 
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5500;
 
 
-exports.LoadServer = function(){
+exports.LoadServer = () => {
     app.use(bodyParser.json());
 
     app.use(function (req, res, next) {
@@ -21,15 +20,10 @@ exports.LoadServer = function(){
         res.header('Access-Control-Allow-Credentials', true);
         next();
     });
-    
+
     app.listen(PORT, () => {
       console.log(`Server is running at PORT ${PORT}`)
     })
-   
+
     return app;
 }
-
-exports.LoadGraphqlHTTP = function(){
-  return graphqlHTTP;
-}
-

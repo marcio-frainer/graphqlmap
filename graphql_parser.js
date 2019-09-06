@@ -1,44 +1,52 @@
-/** 
- * 
- * 
- * 
+/**
+ *
+ *
+ *
 */
 
-var graph = require('graphql-tools');
-//var graphqlhttp = require('express-graphql');
-var {GraphQLSchema, GraphQLObjectType, GraphQLString} = require('graphql');
-var service = require('@tadashi/placa');
+const { ApolloServer, gql } = require('apollo-server-express');
 
-exports.GraphParser = function(config, jsonStruct, app, graphqlHTTP) {
-    var route = jsonStruct.route;
-    var table = jsonStruct.table;
-    var mapping = jsonStruct.mapping[0];
-    var schema = jsonStruct.schemma;
+exports.GraphParser = function(config, jsonStruct, app) {
+    var typeDefsFile = jsonStruct.typeDefs;
 
-    // app.get(route, (req, resp) => {
-    //     return resp.json({
-    //         msg: mapping.fieldName
-    //     })
-    // })
+    if (typeDefsFile.query) {
+      var defs = typeDefsFile.query.def;
+      var defsStr = "";
+      defs.map( (item) => {
+        defsStr += item.name + ': ' + item.type + "\n"
+      })
 
-    var schema = new GraphQLSchema({
-        query: new GraphQLObjectType({
-            name: 'RootQueryType',
-            fields: {
-              hello: {
-                type: GraphQLString,
-                resolve() {
-                  return service('QHN4004');
-                }
-              }
-            }
-          })
+      var queryStr = gql`
+        type Query {
+          ${defsStr}
+        }
+      `;
+
+      typeDefs = queryStr;
+    }
+
+    var resolvers = {
+      Query: {
+      }
+    }
+
+    defs.map( (item) => {
+      Object.defineProperty(resolvers.Query, item.name, {
+        value: () => 'teste',
+        writable: false
+      })
     })
 
-    app.use(route, graphqlHTTP(async (req, res, graphParams) => ({
-        graphiql: true,
-        schema: schema
-    })));
+    const server = new ApolloServer({
+      typeDefs: typeDefs,
+      resolvers: resolvers,
+      playground: {
+        endpoint: "/graphql",
+        settings: {
+          'editor.theme': 'dark'
+        }
+      }
+    });
 
-
+    server.applyMiddleware({ app });
 }
