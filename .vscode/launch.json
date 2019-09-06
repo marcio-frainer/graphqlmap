@@ -8,9 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\index.js",
-            "args": ["jsonFiles"]
-
+            "program": "${workspaceFolder}\\src\\index.js",
+            "args": ["src\\loadFiles"]
         }
     ]
 }

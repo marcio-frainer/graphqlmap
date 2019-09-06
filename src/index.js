@@ -1,14 +1,14 @@
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 
+ *
  * GraphQL server application
  * Node.js
  * Marcio Frainer - 14/05/2019
- * 
+ *
  * Load config file with database connection
- * Load folder with structure json files 
- * Analisys all files and errors return 
+ * Load folder with structure json files
+ * Analisys all files and errors return
  * Parser information and load sctructures
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

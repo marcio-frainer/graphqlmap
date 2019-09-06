@@ -1,0 +1,20 @@
+{
+	"model": "Classe",
+	"graphql": {
+		"defs": [
+				{"name": "idclasse","type": "Int"},
+				{"name": "declasse", "type": "String"}
+			]
+		},
+		"mutation": {
+		}
+	},
+	"maps": {
+		"tablename": "ESAJCLASSE",
+		"fields": [
+			{"name": "cdclasse", "type": "INTEGER", "primarykey": true},
+			{"name": "declasse", "type": "STRING"}
+		]
+	}
+}
+

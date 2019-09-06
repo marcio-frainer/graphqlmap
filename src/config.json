@@ -4,8 +4,9 @@
         "config": {
             "username": "saj",
             "password": "agesune1",
-            "host": "172.21.8.8//Isaj01",
+            "host": "172.21.8.8",
             "alias": "PG5TINT",
+            "port": "41433",
             "parseJSON": true
         }
     }
